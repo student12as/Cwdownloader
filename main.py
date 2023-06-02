@@ -51,6 +51,9 @@ info= {
     "deviceModel":"Asus ASUS_X00TD",
     "deviceVersion":"Pie(Android 9.0)",
     "email":"",
+    "deviceToken": "fYdfgaUaQZmYP7vV4r2rjr:APA91bFPn3Z4m_YS8kYQSthrueUh-lyfxLghL9ka-MT0m_4TRtlUu7cy90L8H6VbtWorg95Car6aU9zjA-59bZypta9GNNuAdUxTnIiGFxMCr2G3P4Gf054Kdgwje44XWzS9ZGa4iPZh"
+
+    
 }
 
 @bot.on_message(filters.command(["login"]))

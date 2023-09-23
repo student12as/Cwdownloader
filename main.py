@@ -43,7 +43,7 @@ bc_url = (
 )
 bc_hdr = {"BCOV-POLICY": BCOV_POLICY}
 
-url="https://elearn.crwilladmin.com/api/v1/"
+url="https://elearn.crwilladmin.com/api/v3/"
 
 info= {
  "deviceType":"android",
@@ -73,7 +73,7 @@ async def account_login(bot: Client, m: Message):
     await editable.edit("**login Successful**")
     await editable.edit("You have these Batches :-")
     
-    url1 = requests.get("https://elearn.crwilladmin.com/api/v1/comp/my-batch?&token="+token)
+    url1 = requests.get("https://elearn.crwilladmin.com/api/v3/comp/my-batch?&token="+token)
     b_data = url1.json()['data']['batchData']
 
     cool=""
@@ -89,7 +89,7 @@ async def account_login(bot: Client, m: Message):
     input2 = message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
 
-# topic id url = https://elearn.crwilladmin.com/api/v1/comp/batch-topic/881?type=class&token=d76fce74c161a264cf66b972fd0bc820992fe576
+# topic id url = https://elearn.crwilladmin.com/api/v3/comp/batch-topic/881?type=class&token=d76fce74c161a264cf66b972fd0bc820992fe576
     url2 = requests.get("https://elearn.crwilladmin.com/api/v1/comp/batch-topic/"+raw_text2+"?type=class&token="+token)
     topicid = url2.json()["data"]["batch_topic"]
     bn =url2.json()["data"]["batch_detail"]["name"]
@@ -99,7 +99,7 @@ async def account_login(bot: Client, m: Message):
         t_name=(data["topicName"])
         tid = (data["id"])
         
-        urlx = "https://elearn.crwilladmin.com/api/v1/comp/batch-detail/"+raw_text2+"?redirectBy=mybatch&topicId="+tid+"&token="+token
+        urlx = "https://elearn.crwilladmin.com/api/v3/comp/batch-detail/"+raw_text2+"?redirectBy=mybatch&topicId="+tid+"&token="+token
         ffx = requests.get(urlx)
         vcx =ffx.json()["data"]["class_list"]["batchDescription"]
         vvx =ffx.json()["data"]["class_list"]["classes"]
@@ -137,9 +137,9 @@ async def account_login(bot: Client, m: Message):
 
     
     
-    #gettting all json with diffrent topic id https://elearn.crwilladmin.com/api/v1/comp/batch-detail/881?redirectBy=mybatch&topicId=2324&token=d76fce74c161a264cf66b972fd0bc820992fe57
+    #gettting all json with diffrent topic id https://elearn.crwilladmin.com/api/v3/comp/batch-detail/881?redirectBy=mybatch&topicId=2324&token=d76fce74c161a264cf66b972fd0bc820992fe57
     
-    url3 = "https://elearn.crwilladmin.com/api/v1/comp/batch-detail/"+raw_text2+"?redirectBy=mybatch&topicId="+raw_text3+"&token="+token   
+    url3 = "https://elearn.crwilladmin.com/api/v3/comp/batch-detail/"+raw_text2+"?redirectBy=mybatch&topicId="+raw_text3+"&token="+token   
     ff = requests.get(url3)
     #vc =ff.json()["data"]["class_list"]["batchDescription"]
     mm = ff.json()["data"]["class_list"]["batchName"]
@@ -164,7 +164,7 @@ async def account_login(bot: Client, m: Message):
                     video_url = video_source["src"]
                     #print(video_url)
 
-                    surl=requests.get("https://elearn.crwilladmin.com/api/v1/livestreamToken?type=brightcove&vid="+vidid+"&token="+token)
+                    surl=requests.get("https://elearn.crwilladmin.com/api/v3/livestreamToken?type=brightcove&vid="+vidid+"&token="+token)
                     stoken = surl.json()["data"]["token"]
                     #print(stoken)
 

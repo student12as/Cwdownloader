@@ -137,7 +137,7 @@ async def account_login(bot: Client, m: Message):
 
     
     
-    #gettting all json with diffrent topic id https://elearn.crwilladmin.com/api/v3/comp/batch-detail/881?redirectBy=mybatch&topicId=2324&token=d76fce74c161a264cf66b972fd0bc820992fe57
+    #gettting all json with diffrent topic id https://elearn.crwilladmin.com/api/v3/comp/batch-detail/881?redirectBy=mybatch&topicId=1340&token=92013a99927c4842b0a70fbd6f064a95
     
     url3 = "https://elearn.crwilladmin.com/api/v3/comp/batch-detail/"+raw_text2+"?redirectBy=mybatch&topicId="+raw_text3+"&token="+token   
     ff = requests.get(url3)

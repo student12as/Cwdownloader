@@ -12,7 +12,23 @@ from subprocess import getstatusoutput
 import re
 from pyrogram.types import User, Message
 import os
+
 import requests
+bot = Client(
+    "CW",
+    bot_token=os.environ.get("BOT_TOKEN"),
+    api_id=int(os.environ.get("API_ID")),
+    api_hash=os.environ.get("API_HASH")
+)
+
+logger = logging.getLogger()
+@bot.on_message(filters.command(["start"]))
+async def start(bot, update):
+       await update.reply_text("Hi i am **Careerwill Downloader**.\n\n"
+                              "**NOW:-** "
+                                       
+                                       "Press **/login** to continue..\n\n")
+
 
 ACCOUNT_ID = "6206459123001"
 BCOV_POLICY = "BCpkADawqM1474MvKwYlMRZNBPoqkJY-UWm7zE1U769d5r5kqTjG0v8L-THXuVZtdIQJpfMPB37L_VJQxTKeNeLO2Eac_yMywEgyV9GjFDQ2LTiT4FEiHhKAUvdbx9ku6fGnQKSMB8J5uIDd"

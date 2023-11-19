@@ -13,7 +13,6 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import FloodWait
 import time
 from pyrogram.types import User, Message
-from p_bar import progress_bar
 from subprocess import getstatusoutput
 import logging
 import os
